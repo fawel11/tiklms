@@ -1,0 +1,7 @@
+`pipelines:
+  branches:
+    master:
+      - step:
+          name: Deploy to Production Server
+          script:
+            - ssh chandan@api.lms.tikweb.com 'cd /srv/www/api.lms.tikweb.com/www; git add .; git commit -m "git conflict merge"; git pull origin master; echo "Changes deployed!!"; echo "Deploying to Production Server";'
